@@ -338,13 +338,19 @@ certNext.addEventListener('click', () => {
 renderCert(currentCertIndex);
 
 /* ==========================================================================
-   6. FORMULÁRIO DE CONTATO
+   6. INTEGRAÇÃO COM FORMS.APP
    ========================================================================== */
 const contactForm = document.getElementById('contact-form');
+const FORMS_APP_URL = 'https://go.forms.app/form/6ada30896ce5d988c1583f8c';
 
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
+  
   const name = document.getElementById('name').value;
-  alert(`Obrigado pelo contato, ${name}! Mensagem registrada com sucesso.`);
+  
+  // Abre o formulário do forms.app em nova aba para conclusão/registro direto no painel
+  window.open(FORMS_APP_URL, '_blank');
+  
+  alert(`Obrigado pelo contato, ${name}! Abrimos a confirmação no forms.app para registrar sua mensagem com sucesso.`);
   contactForm.reset();
 });
