@@ -62,7 +62,7 @@ animateStars();
    ========================================================================== */
 const typewriterWords = [
   'Soluções em seu negócio.',
-  'automações.',
+  'automações para seu dia a dia.',
   'dashboards para gerenciamento de sua empresa.',
   'Sistema Web para sua empresa.'
 ];
@@ -104,9 +104,9 @@ typeEffect();
    ========================================================================== */
 const skillsData = [
   { name: 'Python', icon: 'fa-brands fa-python', color: '#3776ab' },
-  { name: 'HTML5 & CSS3', icon: 'fa-brands fa-html5', color: '#e34f26' },
+  { name: 'HTML & CSS', icon: 'fa-brands fa-html5', color: '#e34f26' },
   { name: 'JavaScript', icon: 'fa-brands fa-js', color: '#f7df1e' },
-  { name: 'SQL & Relacional', icon: 'fa-solid fa-database', color: '#4ECCA3' },
+  { name: 'SQL ', icon: 'fa-solid fa-database', color: '#4ECCA3' },
   { name: 'Power BI', icon: 'fa-solid fa-chart-pie', color: '#f2c811' },
   { name: 'Excel Avançado', icon: 'fa-solid fa-file-excel', color: '#107c41' }
 ];
@@ -162,13 +162,13 @@ window.addEventListener('resize', updateSkillsCarousel);
    ========================================================================== */
 const projectsData = [
   {
-    title: 'Portal de Gestão & Intranet',
+    title: 'Sistema - Prova Facil',
     category: 'fullstack',
-    desc: 'Sistema corporativo modular com autenticação segura, módulos de controle de processos e tema responsivo.',
+    desc: 'Sistema Web desenvolvido para empresa SENAC processos administrativos para Prova.',
     tags: ['Python', 'Flask', 'SQL', 'JavaScript'],
-    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80',
-    demoUrl: '#',
-    codeUrl: '#'
+    img: 'prova_facil.png',
+    demoUrl: 'prova_facil.png',
+    codeUrl: 'https://github.com/Viictor-Guerrero/prova_facil/tree/main/provafacil'
   },
   {
     title: 'Dashboard de Indicadores Operacionais',
@@ -338,19 +338,13 @@ certNext.addEventListener('click', () => {
 renderCert(currentCertIndex);
 
 /* ==========================================================================
-   6. INTEGRAÇÃO COM FORMS.APP
+   6. FORMULÁRIO DE CONTATO
    ========================================================================== */
 const contactForm = document.getElementById('contact-form');
-const FORMS_APP_URL = 'https://go.forms.app/form/6ada30896ce5d988c1583f8c';
 
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  
   const name = document.getElementById('name').value;
-  
-  // Abre o formulário do forms.app em nova aba para conclusão/registro direto no painel
-  window.open(FORMS_APP_URL, '_blank');
-  
-  alert(`Obrigado pelo contato, ${name}! Abrimos a confirmação no forms.app para registrar sua mensagem com sucesso.`);
+  alert(`Obrigado pelo contato, ${name}! Mensagem registrada com sucesso.`);
   contactForm.reset();
 });
