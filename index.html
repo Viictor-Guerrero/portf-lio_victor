@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victor Guerrero. | Portfólio</title>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- CSS Customizado -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Canvas das Estrelas Cintilantes -->
+  <canvas id="space-canvas"></canvas>
+
+  <!-- Navbar Superior -->
+  <header class="navbar">
+    <a href="#" class="logo">Victor Guerrero.</a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="social-icons">
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com" target="_blank" title="GitHub" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:seuemail@exemplo.com" title="E-mail" aria-label="E-mail">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+      </div>
+      <a href="#contato" class="btn-pill btn-connect">Conecte-se</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Seção Hero -->
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <span class="hero-tag">Seja Bem vindo(a)</span>
+        <h1 class="hero-title">
+          Transformando ideias em <span id="typewriter" class="typewriter-text"></span><span class="cursor">|</span>
+        </h1>
+        <p class="hero-description">
+          Olá! Sou desenvolvedor de software apaixonado por tecnologia, dados e inovação. Combinando criatividade e código, construo soluções eficientes, interfaces dinâmicas e dashboards analíticos de alto impacto. Bem-vindo ao meu portfólio!
+        </p>
+        <a href="#contato" class="btn-pill btn-download">
+          Download CV <i class="fa-regular fa-circle-down"></i>
+        </a>
+      </div>
+
+      <div class="hero-illustration">
+        <div class="code-bracket-art">&lt;/&gt;</div>
+      </div>
+    </section>
+
+    <!-- Seção Habilidades e Ferramentas -->
+    <section id="habilidades" class="skills-section">
+      <h2 class="section-title">Habilidades e Ferramentas</h2>
+      <p class="section-subtitle">
+        Desenvolvedor Full Stack com experiência prática em APIs, bancos relacionais, automações em Python, interfaces web e análise avançada de dados com Power BI e Excel.
+      </p>
+
+      <div class="skills-carousel-container">
+        <button id="skill-prev" class="carousel-nav-btn" aria-label="Anterior">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="skills-track-wrapper">
+          <div id="skills-track" class="skills-track">
+            <!-- Cards de Habilidades Injetados via JS -->
+          </div>
+        </div>
+
+        <button id="skill-next" class="carousel-nav-btn" aria-label="Próximo">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <p class="skills-quote">
+        Sempre buscando desafios técnicos reais e em constante evolução como desenvolvedor de software! 🚀
+      </p>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos" class="projects-section">
+      <h2 class="section-title">Projetos</h2>
+      <p class="section-subtitle">
+        Aqui estão alguns dos projetos que desenvolvi, combinando tecnologia, design e inteligência de dados. Cada um reflete minha paixão por programação e busca por soluções funcionais e bem estruturadas. Confira! 🚀
+      </p>
+
+      <!-- Abas de Filtros em Cápsula -->
+      <div class="project-tabs">
+        <button class="tab-btn active" data-filter="all">Todos</button>
+        <button class="tab-btn" data-filter="frontend">Front-End</button>
+        <button class="tab-btn" data-filter="backend">Back-End</button>
+        <button class="tab-btn" data-filter="fullstack">Full Stack</button>
+        <button class="tab-btn" data-filter="dados">Dados &amp; BI</button>
+      </div>
+
+      <!-- Grid de Projetos -->
+      <div id="projects-grid" class="projects-grid">
+        <!-- Renderizado dinamicamente via JS -->
+      </div>
+    </section>
+
+    <!-- Seção Certificações Relevantes -->
+    <section class="certifications-section">
+      <h2 class="section-title">Certificações Relevantes</h2>
+      <p class="section-subtitle">Formações e certificados que conquistei ao longo da carreira</p>
+
+      <div class="cert-carousel-wrapper">
+        <div id="cert-card" class="cert-card">
+          <!-- Dados da certificação atual preenchidos via JS -->
+        </div>
+
+        <div class="cert-pagination">
+          <button id="cert-prev" class="cert-nav-arrow" aria-label="Certificado Anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="cert-dots" id="cert-dots"></div>
+          <button id="cert-next" class="cert-nav-arrow" aria-label="Próximo Certificado">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+        <span class="cert-counter" id="cert-counter">1 / 3</span>
+      </div>
+    </section>
+
+    <!-- Seção Entre em Contato -->
+    <section id="contato" class="contact-section">
+      <div class="contact-container">
+        <div class="contact-illustration">
+          <svg viewBox="0 0 500 500" class="floating-dev-svg">
+            <defs>
+              <linearGradient id="laptopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4ECCA3" />
+                <stop offset="100%" stop-color="#2c8a6c" />
+              </linearGradient>
+            </defs>
+            <circle cx="250" cy="250" r="180" fill="rgba(78, 204, 163, 0.05)" stroke="rgba(78, 204, 163, 0.2)" stroke-dasharray="6,6" />
+            <rect x="140" y="220" width="220" height="130" rx="12" fill="#1b2430" stroke="#4ECCA3" stroke-width="2" />
+            <rect x="155" y="235" width="190" height="90" rx="6" fill="#0d1117" />
+            <text x="175" y="285" fill="#4ECCA3" font-family="monospace" font-size="20">&lt;coder /&gt;</text>
+            <circle cx="250" cy="140" r="45" fill="#f4caa1" />
+            <path d="M210 135 Q 250 85 290 135" fill="#2d3748" />
+            <path d="M195 185 C 195 185, 220 220, 250 220 C 280 220, 305 185, 305 185 L 320 270 L 180 270 Z" fill="#4361ee" />
+            <rect x="90" y="160" width="60" height="40" rx="6" fill="#1e293b" stroke="#64748b" />
+            <rect x="350" y="290" width="60" height="40" rx="6" fill="#1e293b" stroke="#64748b" />
+          </svg>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <h2 class="contact-title">Entre em contato</h2>
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" required placeholder="Seu nome completo" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefone</label>
+                <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Escreva sua proposta ou mensagem..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-pill btn-submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-container">
+      <span class="footer-logo">Victor Guerrero.</span>
+      <p class="footer-copy">&copy; 2026. Todos os Direitos Reservados</p>
+      <div class="footer-socials">
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:seuemail@exemplo.com" aria-label="E-mail"><i class="fa-regular fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Principal -->
+  <script src="script.js"></script>
+</body>
+</html>

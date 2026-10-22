@@ -1,0 +1,350 @@
+/* ==========================================================================
+   1. CANVAS COM ESTRELAS CINTILANTES
+   ========================================================================== */
+const canvas = document.getElementById('space-canvas');
+const ctx = canvas.getContext('2d');
+
+let stars = [];
+const STAR_COUNT = 150;
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  initStars();
+}
+
+function initStars() {
+  stars = [];
+  for (let i = 0; i < STAR_COUNT; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 1.5 + 0.4,
+      alpha: Math.random(),
+      speed: Math.random() * 0.02 + 0.005,
+      direction: Math.random() > 0.5 ? 1 : -1
+    });
+  }
+}
+
+function animateStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  stars.forEach((star) => {
+    star.alpha += star.speed * star.direction;
+    if (star.alpha >= 1) {
+      star.alpha = 1;
+      star.direction = -1;
+    } else if (star.alpha <= 0.1) {
+      star.alpha = 0.1;
+      star.direction = 1;
+    }
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+    ctx.shadowBlur = star.radius * 3;
+    ctx.shadowColor = '#ffffff';
+    ctx.fill();
+    ctx.restore();
+  });
+
+  requestAnimationFrame(animateStars);
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+animateStars();
+
+/* ==========================================================================
+   2. EFEITO TYPEWRITER (DIGITAÇÃO DINÂMICA)
+   ========================================================================== */
+const typewriterWords = [
+  'Soluções em seu negócio.',
+  'automações.',
+  'dashboards para gerenciamento de sua empresa.',
+  'Sistema Web para sua empresa.'
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typewriterEl = document.getElementById('typewriter');
+
+function typeEffect() {
+  const currentWord = typewriterWords[wordIndex];
+
+  if (isDeleting) {
+    typewriterEl.textContent = currentWord.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typewriterEl.textContent = currentWord.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  let typingSpeed = isDeleting ? 45 : 90;
+
+  if (!isDeleting && charIndex === currentWord.length) {
+    typingSpeed = 2200; // pausa ao terminar de digitar
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % typewriterWords.length;
+    typingSpeed = 500;
+  }
+
+  setTimeout(typeEffect, typingSpeed);
+}
+
+typeEffect();
+
+/* ==========================================================================
+   3. HABILIDADES E FERRAMENTAS (CARROSSEL)
+   ========================================================================== */
+const skillsData = [
+  { name: 'Python', icon: 'fa-brands fa-python', color: '#3776ab' },
+  { name: 'HTML5 & CSS3', icon: 'fa-brands fa-html5', color: '#e34f26' },
+  { name: 'JavaScript', icon: 'fa-brands fa-js', color: '#f7df1e' },
+  { name: 'SQL & Relacional', icon: 'fa-solid fa-database', color: '#4ECCA3' },
+  { name: 'Power BI', icon: 'fa-solid fa-chart-pie', color: '#f2c811' },
+  { name: 'Excel Avançado', icon: 'fa-solid fa-file-excel', color: '#107c41' }
+];
+
+const skillsTrack = document.getElementById('skills-track');
+const skillPrev = document.getElementById('skill-prev');
+const skillNext = document.getElementById('skill-next');
+
+skillsData.forEach(skill => {
+  const card = document.createElement('div');
+  card.className = 'skill-card';
+  card.innerHTML = `
+    <div class="skill-icon-circle">
+      <i class="${skill.icon}" style="color: ${skill.color}"></i>
+    </div>
+    <span class="skill-name">${skill.name}</span>
+  `;
+  skillsTrack.appendChild(card);
+});
+
+let currentSkillOffset = 0;
+
+function updateSkillsCarousel() {
+  const cardWidth = skillsTrack.children[0].offsetWidth + 32; // card + gap
+  const visibleCards = window.innerWidth > 900 ? 3 : window.innerWidth > 600 ? 2 : 1;
+  const maxOffset = skillsData.length - visibleCards;
+
+  if (currentSkillOffset < 0) currentSkillOffset = 0;
+  if (currentSkillOffset > maxOffset) currentSkillOffset = maxOffset;
+
+  skillsTrack.style.transform = `translateX(-${currentSkillOffset * cardWidth}px)`;
+}
+
+skillPrev.addEventListener('click', () => {
+  if (currentSkillOffset > 0) {
+    currentSkillOffset--;
+    updateSkillsCarousel();
+  }
+});
+
+skillNext.addEventListener('click', () => {
+  const visibleCards = window.innerWidth > 900 ? 3 : window.innerWidth > 600 ? 2 : 1;
+  if (currentSkillOffset < skillsData.length - visibleCards) {
+    currentSkillOffset++;
+    updateSkillsCarousel();
+  }
+});
+
+window.addEventListener('resize', updateSkillsCarousel);
+
+/* ==========================================================================
+   4. PROJETOS (RENDERIZAÇÃO & FILTRAGEM POR ABAS)
+   ========================================================================== */
+const projectsData = [
+  {
+    title: 'Portal de Gestão & Intranet',
+    category: 'fullstack',
+    desc: 'Sistema corporativo modular com autenticação segura, módulos de controle de processos e tema responsivo.',
+    tags: ['Python', 'Flask', 'SQL', 'JavaScript'],
+    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80',
+    demoUrl: '#',
+    codeUrl: '#'
+  },
+  {
+    title: 'Dashboard de Indicadores Operacionais',
+    category: 'dados',
+    desc: 'Painel analítico automatizado com DAX, modelagem relacional estrela e tratamento via Power Query.',
+    tags: ['Power BI', 'DAX', 'Excel Avançado', 'SQL'],
+    img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80',
+    demoUrl: '#',
+    codeUrl: '#'
+  },
+  {
+    title: 'Automação & Processamento em Lote',
+    category: 'backend',
+    desc: 'Script em Python para integração de planilhas complexas, validação de regras de negócio e geração de relatórios.',
+    tags: ['Python', 'Pandas', 'OpenPyXL', 'SQL'],
+    img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80',
+    demoUrl: '#',
+    codeUrl: '#'
+  },
+  {
+    title: 'Interface Moderna de Agendamento',
+    category: 'frontend',
+    desc: 'Aplicação web front-end com calendário interativo, validação dinâmica de formulários e modo escuro.',
+    tags: ['HTML5', 'CSS3', 'JavaScript'],
+    img: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&auto=format&fit=crop&q=80',
+    demoUrl: '#',
+    codeUrl: '#'
+  },
+  {
+    title: 'API REST de Controle de Chamados',
+    category: 'backend',
+    desc: 'Back-end com endpoints estruturados para abertura, acompanhamento e histórico de chamados com banco SQL.',
+    tags: ['Python', 'REST API', 'SQLite'],
+    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80',
+    demoUrl: '#',
+    codeUrl: '#'
+  },
+  {
+    title: 'Plataforma de E-commerce Gamer',
+    category: 'frontend',
+    desc: 'Página responsiva com vitrine de produtos, carrinho reativo em tempo real e interface temática.',
+    tags: ['JavaScript', 'HTML5', 'CSS3'],
+    img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80',
+    demoUrl: '#',
+    codeUrl: '#'
+  }
+];
+
+const projectsGrid = document.getElementById('projects-grid');
+const tabButtons = document.querySelectorAll('.tab-btn');
+
+function renderProjects(filter = 'all') {
+  projectsGrid.innerHTML = '';
+  const filtered = filter === 'all' 
+    ? projectsData 
+    : projectsData.filter(p => p.category === filter);
+
+  filtered.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    card.innerHTML = `
+      <div class="project-thumb">
+        <img src="${item.img}" alt="${item.title}" loading="lazy" />
+      </div>
+      <div class="project-body">
+        <h3 class="project-card-title">${item.title}</h3>
+        <p class="project-card-desc">${item.desc}</p>
+        <div class="project-tags">
+          ${item.tags.map(t => `<span class="tag-badge">${t}</span>`).join('')}
+        </div>
+        <div class="project-links">
+          <a href="${item.demoUrl}" class="project-link-btn" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+          </a>
+          <a href="${item.codeUrl}" class="project-link-btn" target="_blank">
+            <i class="fa-brands fa-github"></i> Código
+          </a>
+        </div>
+      </div>
+    `;
+    projectsGrid.appendChild(card);
+  });
+}
+
+tabButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    tabButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderProjects(btn.dataset.filter);
+  });
+});
+
+renderProjects();
+
+/* ==========================================================================
+   5. CERTIFICAÇÕES RELEVANTES (PAGINAÇÃO)
+   ========================================================================== */
+const certsData = [
+  {
+    title: 'Formação em Análise de Dados & Power BI',
+    issuer: 'Certificação Especializada • Concluído em 2026',
+    desc: 'Desenvolvimento de dashboards avançados, DAX analítico, modelagem de dados relacional e governança de relatórios.',
+    icon: 'fa-solid fa-chart-line',
+    certUrl: '#'
+  },
+  {
+    title: 'Desenvolvimento Web Full Stack & Python',
+    issuer: 'Formação Prática • Concluído em 2025',
+    desc: 'Construção de APIs REST, back-end estruturado em Python, persistência SQL e interfaces modernas com JavaScript.',
+    icon: 'fa-solid fa-laptop-code',
+    certUrl: '#'
+  },
+  {
+    title: 'Modelagem de Banco de Dados & SQL Avançado',
+    issuer: 'Certificação Técnica • Concluído em 2025',
+    desc: 'Criação de consultas complexas, joins, agregações analíticas, triggers e otimização de consultas relacionais.',
+    icon: 'fa-solid fa-database',
+    certUrl: '#'
+  }
+];
+
+let currentCertIndex = 0;
+const certCard = document.getElementById('cert-card');
+const certDotsContainer = document.getElementById('cert-dots');
+const certCounter = document.getElementById('cert-counter');
+const certPrev = document.getElementById('cert-prev');
+const certNext = document.getElementById('cert-next');
+
+function renderCert(index) {
+  const item = certsData[index];
+  certCard.style.opacity = '0';
+
+  setTimeout(() => {
+    certCard.innerHTML = `
+      <i class="${item.icon} cert-badge-icon"></i>
+      <h3 class="cert-title">${item.title}</h3>
+      <span class="cert-issuer">${item.issuer}</span>
+      <p class="cert-desc">${item.desc}</p>
+      <a href="${item.certUrl}" class="btn-pill" target="_blank" style="margin-top: 0.5rem;">
+        Ver Comprovante
+      </a>
+    `;
+    certCard.style.opacity = '1';
+  }, 180);
+
+  // Indicador de Dots e Contador
+  certDotsContainer.innerHTML = '';
+  certsData.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = `cert-dot ${i === index ? 'active' : ''}`;
+    certDotsContainer.appendChild(dot);
+  });
+
+  certCounter.textContent = `${index + 1} / ${certsData.length}`;
+}
+
+certPrev.addEventListener('click', () => {
+  currentCertIndex = (currentCertIndex - 1 + certsData.length) % certsData.length;
+  renderCert(currentCertIndex);
+});
+
+certNext.addEventListener('click', () => {
+  currentCertIndex = (currentCertIndex + 1) % certsData.length;
+  renderCert(currentCertIndex);
+});
+
+renderCert(currentCertIndex);
+
+/* ==========================================================================
+   6. FORMULÁRIO DE CONTATO
+   ========================================================================== */
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  alert(`Obrigado pelo contato, ${name}! Mensagem registrada com sucesso.`);
+  contactForm.reset();
+});
