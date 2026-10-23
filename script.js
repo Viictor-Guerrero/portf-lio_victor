@@ -275,18 +275,18 @@ const certsData = [
     certUrl: 'certificado_de_conclusao_ads.pdf'
   },
   {
-    title: 'Desenvolvimento Web Full Stack & Python',
-    issuer: 'Formação Prática • Concluído em 2025',
-    desc: 'Construção de APIs REST, back-end estruturado em Python, persistência SQL e interfaces modernas com JavaScript.',
+    title: 'Desenvolvimento em Python',
+    issuer: 'Formação Prática • Concluído em 2023',
+    desc: 'Construção de APIs REST, back-end estruturado em Python, persistência SQL e interfaces modernas com Python e BackEnd.',
     icon: 'fa-solid fa-laptop-code',
-    certUrl: '#'
+    certUrl: 'https://www.udemy.com/certificate/UC-d3cbc031-9e56-4347-9c80-51ef6b166b3f/'
   },
   {
-    title: 'Modelagem de Banco de Dados & SQL Avançado',
+    title: 'Modelagem de dados e Excel Avançado',
     issuer: 'Certificação Técnica • Concluído em 2025',
     desc: 'Criação de consultas complexas, joins, agregações analíticas, triggers e otimização de consultas relacionais.',
     icon: 'fa-solid fa-database',
-    certUrl: '#'
+    certUrl: 'https://www.udemy.com/certificate/UC-8cf5e471-564b-45fb-9be8-1fcd78ea8036/?utm_campaign=email&utm_medium=email&utm_source=sendgrid.com'
   }
 ];
 
