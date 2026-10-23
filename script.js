@@ -171,13 +171,13 @@ const projectsData = [
     codeUrl: 'https://github.com/Viictor-Guerrero/prova_facil/tree/main/provafacil'
   },
   {
-    title: 'Dashboard de Indicadores Operacionais',
+    title: 'Dashboard de Indicadores Operacionais - Power BI',
     category: 'dados',
-    desc: 'Painel analítico automatizado com DAX, modelagem relacional estrela e tratamento via Power Query.',
-    tags: ['Power BI', 'DAX', 'Excel Avançado', 'SQL'],
-    img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80',
-    demoUrl: '#',
-    codeUrl: '#'
+    desc: 'Painel analítico automatizado em Power BI, tratamento de dados via Power Query.',
+    tags: ['Power BI', 'Power Query', 'Excel Avançado', 'Dados'],
+    img: 'imagem04.png',
+    demoUrl: 'imagem05.png',
+    codeUrl: 'https://github.com/Viictor-Guerrero'
   },
   {
     title: 'Automação & Processamento em Lote',
