@@ -184,9 +184,9 @@ const projectsData = [
     category: 'backend',
     desc: 'Script em Python para integração de planilhas complexas, validação de regras de negócio e geração de relatórios.',
     tags: ['Python', 'Pandas', 'OpenPyXL', 'SQL'],
-    img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80',
-    demoUrl: '#',
-    codeUrl: '#'
+    img: 'imagem06.png',
+    demoUrl: 'imagem06.png',
+    codeUrl: 'https://github.com/Viictor-Guerrero'
   },
   {
     title: 'Interface Moderna de Agendamento',
