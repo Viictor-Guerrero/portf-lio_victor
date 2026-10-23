@@ -176,7 +176,7 @@ const projectsData = [
     desc: 'Painel analítico automatizado em Power BI, tratamento de dados via Power Query.',
     tags: ['Power BI', 'Power Query', 'Excel Avançado', 'Dados'],
     img: 'imagem04.png',
-    demoUrl: 'imagem05.png',
+    demoUrl: 'imagem05.PNG',
     codeUrl: 'https://github.com/Viictor-Guerrero'
   },
   {
