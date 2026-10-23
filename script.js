@@ -338,13 +338,34 @@ certNext.addEventListener('click', () => {
 renderCert(currentCertIndex);
 
 /* ==========================================================================
-   6. FORMULÁRIO DE CONTATO
+   6. FORMULÁRIO DE CONTATO (INTEGRAÇÃO FORMS.APP)
    ========================================================================== */
 const contactForm = document.getElementById('contact-form');
+const FORMS_APP_BASE = 'https://go.forms.app/form/6ada30896ce5d988c1583f8c';
 
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = document.getElementById('name').value;
-  alert(`Obrigado pelo contato, ${name}! Mensagem registrada com sucesso.`);
-  contactForm.reset();
-});
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name')?.value || '';
+    const email = document.getElementById('email')?.value || '';
+    const phone = document.getElementById('phone')?.value || '';
+    const message = document.getElementById('message')?.value || '';
+
+    // Monta os parâmetros para transferir o que o usuário digitou direto para o formulário
+    const params = new URLSearchParams({
+      name: name,
+      email: email,
+      phone: phone,
+      message: message
+    });
+
+    const targetUrl = `${FORMS_APP_BASE}?${params.toString()}`;
+
+    // Abre o forms.app em nova aba para salvar a resposta no seu painel
+    window.open(targetUrl, '_blank');
+
+    alert(`Obrigado pelo contato, ${name}! Redirecionando para confirmar seu envio.`);
+    contactForm.reset();
+  });
+}
