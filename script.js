@@ -209,7 +209,7 @@ const projectsData = [
   {
     title: 'Plataforma de gerenciamento financeiro',
     category: 'backend',
-    desc: 'Página responsiva com vitrine de produtos, carrinho reativo em tempo real e interface temática.',
+    desc: 'Plataforma criada para gerenciamento e lançamentos de produtos farmacêuticos, com pagina exclusiva de gerenciamento administrador de usuários',
     tags: ['JavaScript', 'HTML', 'CSS', 'Python', 'Pandas'],
     img: 'imagem29.PNG',
     demoUrl: 'gerenciamento_financeiro.pdf',
