@@ -189,22 +189,22 @@ const projectsData = [
     codeUrl: 'https://github.com/Viictor-Guerrero'
   },
   {
-    title: 'Interface Moderna de Agendamento',
+    title: 'Calendário Interativo em tempo real',
     category: 'frontend',
-    desc: 'Aplicação web front-end com calendário interativo, validação dinâmica de formulários e modo escuro.',
+    desc: 'Aplicação web front-end com calendário interativo, validação dinâmica de dados',
     tags: ['HTML5', 'CSS3', 'JavaScript'],
-    img: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&auto=format&fit=crop&q=80',
-    demoUrl: '#',
-    codeUrl: '#'
+    img: 'imagem07.png',
+    demoUrl: 'imagem09.PNG',
+    codeUrl: 'https://github.com/Viictor-Guerrero'
   },
   {
-    title: 'API REST de Controle de Chamados',
+    title: 'Sistema desenvolvido para controle de chamados',
     category: 'backend',
-    desc: 'Back-end com endpoints estruturados para abertura, acompanhamento e histórico de chamados com banco SQL.',
+    desc: 'Back-end com endpoints estruturados para abertura, acompanhamento e histórico de chamados com banco SQLite.',
     tags: ['Python', 'REST API', 'SQLite'],
-    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80',
-    demoUrl: '#',
-    codeUrl: '#'
+    img: 'imagem33.png',
+    demoUrl: 'sistema_chamados.pdf',
+    codeUrl: 'https://github.com/Viictor-Guerrero/sistema_de_chamados'
   },
   {
     title: 'Plataforma de E-commerce Gamer',
