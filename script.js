@@ -201,7 +201,7 @@ const projectsData = [
     title: 'Sistema desenvolvido para controle de chamados',
     category: 'backend',
     desc: 'Back-end com endpoints estruturados para abertura, acompanhamento e histórico de chamados com banco SQLite.',
-    tags: ['Python', 'REST API', 'SQLite'],
+    tags: ['Python', 'REST API', 'SQLite', 'HTML', 'CSS', 'Javascript'],
     img: 'imagem33.png',
     demoUrl: 'sistema_chamados.pdf',
     codeUrl: 'https://github.com/Viictor-Guerrero/sistema_de_chamados'
