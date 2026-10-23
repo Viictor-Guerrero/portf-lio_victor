@@ -211,7 +211,7 @@ const projectsData = [
     category: 'backend',
     desc: 'Página responsiva com vitrine de produtos, carrinho reativo em tempo real e interface temática.',
     tags: ['JavaScript', 'HTML', 'CSS', 'Python', 'Pandas'],
-    img: 'imagem29.png',
+    img: 'imagem29.PNG',
     demoUrl: 'gerenciamento_financeiro.pdf',
     codeUrl: 'https://github.com/Viictor-Guerrero/sistema_gerenciamento_financeiro'
   }
