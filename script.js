@@ -167,7 +167,7 @@ const projectsData = [
     desc: 'Sistema Web desenvolvido para empresa SENAC processos administrativos para Prova.',
     tags: ['Python', 'Flask', 'SQL', 'JavaScript'],
     img: 'prova_facil.png',
-    demoUrl: 'prova_facil.png',
+    demoUrl: 'imagem01.JPG',
     codeUrl: 'https://github.com/Viictor-Guerrero/prova_facil/tree/main/provafacil'
   },
   {
