@@ -192,7 +192,7 @@ const projectsData = [
     title: 'Calendário Interativo em tempo real',
     category: 'frontend',
     desc: 'Aplicação web front-end com calendário interativo, validação dinâmica de dados',
-    tags: ['HTML5', 'CSS3', 'JavaScript'],
+    tags: ['HTML', 'CSS', 'JavaScript'],
     img: 'imagem07.png',
     demoUrl: 'imagem09.PNG',
     codeUrl: 'https://github.com/Viictor-Guerrero'
@@ -211,7 +211,7 @@ const projectsData = [
     category: 'backend',
     desc: 'Página responsiva com vitrine de produtos, carrinho reativo em tempo real e interface temática.',
     tags: ['JavaScript', 'HTML', 'CSS', 'Python', 'Pandas'],
-    img: 'imagem29.png',
+    img: 'imagem29.PNG',
     demoUrl: 'gerenciamento_financeiro.pdf',
     codeUrl: 'https://github.com/Viictor-Guerrero/sistema_gerenciamento_financeiro'
   }
