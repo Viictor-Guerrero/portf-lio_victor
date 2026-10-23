@@ -176,7 +176,7 @@ const projectsData = [
     desc: 'Painel analítico automatizado em Power BI, tratamento de dados via Power Query.',
     tags: ['Power BI', 'Power Query', 'Excel Avançado', 'Dados'],
     img: 'imagem04.png',
-    demoUrl: 'imagem05.PNG',
+    demoUrl: 'imagem05.png',
     codeUrl: 'https://github.com/Viictor-Guerrero'
   },
   {
@@ -211,7 +211,7 @@ const projectsData = [
     category: 'backend',
     desc: 'Página responsiva com vitrine de produtos, carrinho reativo em tempo real e interface temática.',
     tags: ['JavaScript', 'HTML', 'CSS', 'Python', 'Pandas'],
-    img: 'imagem29.PNG',
+    img: 'imagem29.png',
     demoUrl: 'gerenciamento_financeiro.pdf',
     codeUrl: 'https://github.com/Viictor-Guerrero/sistema_gerenciamento_financeiro'
   }
@@ -268,11 +268,11 @@ renderProjects();
    ========================================================================== */
 const certsData = [
   {
-    title: 'Formação em Análise de Dados & Power BI',
-    issuer: 'Certificação Especializada • Concluído em 2026',
-    desc: 'Desenvolvimento de dashboards avançados, DAX analítico, modelagem de dados relacional e governança de relatórios.',
+    title: 'Formação em Análise desenvolvimento de Sistemas',
+    issuer: 'Certificação • Concluído em 2026',
+    desc: 'Apto para desenvolvimento de sistemas.',
     icon: 'fa-solid fa-chart-line',
-    certUrl: '#'
+    certUrl: 'certificado_de_conclusao_ads.pdf'
   },
   {
     title: 'Desenvolvimento Web Full Stack & Python',
