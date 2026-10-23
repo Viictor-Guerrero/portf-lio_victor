@@ -201,19 +201,19 @@ const projectsData = [
     title: 'Sistema desenvolvido para controle de chamados',
     category: 'backend',
     desc: 'Back-end com endpoints estruturados para abertura, acompanhamento e histórico de chamados com banco SQLite.',
-    tags: ['Python', 'REST API', 'SQLite', 'HTML', 'CSS', 'Javascript'],
+    tags: ['Python', 'REST API', 'SQLite'],
     img: 'imagem33.png',
     demoUrl: 'sistema_chamados.pdf',
     codeUrl: 'https://github.com/Viictor-Guerrero/sistema_de_chamados'
   },
   {
-    title: 'Plataforma de E-commerce Gamer',
-    category: 'frontend',
+    title: 'Plataforma de gerenciamento financeiro',
+    category: 'backend',
     desc: 'Página responsiva com vitrine de produtos, carrinho reativo em tempo real e interface temática.',
-    tags: ['JavaScript', 'HTML5', 'CSS3'],
-    img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80',
-    demoUrl: '#',
-    codeUrl: '#'
+    tags: ['JavaScript', 'HTML', 'CSS', 'Python', 'Pandas'],
+    img: 'imagem29.png',
+    demoUrl: 'gerenciamento_financeiro.pdf',
+    codeUrl: 'https://github.com/Viictor-Guerrero/sistema_gerenciamento_financeiro'
   }
 ];
 
