@@ -162,7 +162,7 @@ window.addEventListener('resize', updateSkillsCarousel);
    ========================================================================== */
 const projectsData = [
   {
-    title: 'Sistema - Prova Facil',
+    title: 'Sistema de Gerenciamento de Prova',
     category: 'fullstack',
     desc: 'Sistema Web desenvolvido para empresa SENAC processos administrativos para Prova.',
     tags: ['Python', 'Flask', 'SQL', 'JavaScript'],
