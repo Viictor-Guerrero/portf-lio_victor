@@ -198,6 +198,15 @@ const projectsData = [
     codeUrl: 'https://github.com/Viictor-Guerrero'
   },
   {
+    title: 'Sistema para gerenciar integrações de dados no ambiente virtual moodle',
+    category: 'frontend',
+    desc: 'Sistema com autenticação de acesso, dinâmica de arquivos, cruzamentos de dados customizados.Exportação Dinâmica em Memória: Geração de relatórios em Excel (.xlsx), para integração de dados na plataforma moodle.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Python' ],
+    img: 'foto_fundo.png',
+    demoUrl: 'comparador_moodle.pdf',
+    codeUrl: 'https://github.com/Viictor-Guerrero/sistema_identificador_moodle/tree/main'
+  }, 
+  {
     title: 'Sistema desenvolvido para controle de chamados',
     category: 'backend',
     desc: 'Back-end com endpoints estruturados para abertura, acompanhamento e histórico de chamados com banco SQLite.',
