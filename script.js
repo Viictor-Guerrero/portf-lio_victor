@@ -281,7 +281,7 @@ const certsData = [
     issuer: 'Certificação • Concluído em 2026',
     desc: 'Apto para desenvolvimento de sistemas.',
     icon: 'fa-solid fa-chart-line',
-    certUrl: 'certificado_de_conclusao_ads.pdf'
+    certUrl: 'certificado.pdf'
   },
   {
     title: 'Desenvolvimento em Python',
