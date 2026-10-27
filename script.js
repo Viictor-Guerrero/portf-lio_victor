@@ -199,7 +199,7 @@ const projectsData = [
   },
   {
     title: 'Sistema para gerenciar integrações de dados no ambiente virtual moodle',
-    category: 'frontend',
+    category: 'fullstack',
     desc: 'Sistema com autenticação de acesso, dinâmica de arquivos, cruzamentos de dados customizados.Exportação Dinâmica em Memória: Geração de relatórios em Excel (.xlsx), para integração de dados na plataforma moodle.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Python' ],
     img: 'foto_fundo.png',
